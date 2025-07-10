@@ -1,0 +1,43 @@
+Project Title: Yolo E-commerce App – Dockerized Microservices
+
+Overview:
+This project is a containerized full-stack e-commerce application composed of three main microservices:
+
+1. **Frontend** – Built with React, served via a Node environment.
+2. **Backend** – Node.js with Express and Mongoose to connect to MongoDB.
+3. **Database** – MongoDB using the official `mongo` Docker image.
+
+Containerization Strategy:
+Each component is isolated in its own container and managed through a single `docker-compose.yml` file. Services are orchestrated using a custom Docker bridge network (`app-net`) which allows seamless communication between containers using their service names (e.g. `mongo`, `rohbikariuki-yolo-backend`, etc.).
+
+Persistence:
+A named Docker volume (`app-mongo-data`) was created and mounted to `/data/db` in the MongoDB container to ensure that products added to the site remain available even after stopping or restarting containers.
+
+Image Optimization:
+To keep image sizes minimal and efficient, I used the `node:16-alpine` base image for both the frontend and backend. This follows best practices for image optimization and keeps each image well under the 400MB threshold.
+
+Versioning:
+All Docker images were tagged semantically (`v1.0.0`) and pushed to DockerHub:
+- `rohbikariuki/yolo-client:v1.0.0`
+- `rohbikariuki/yolo-backend:v1.0.0`
+
+This versioning system makes it easy to track builds and supports CI/CD practices.
+
+Git Workflow:
+The Git history reflects a step-by-step progression of the project with descriptive commit messages that document each major task:
+- Dockerfile setup
+- Docker Compose orchestration
+- Networking and volume addition
+- Debugging and configuration
+- Final deployment and documentation
+
+
+This project satisfies all rubric requirements (except  getting the products to show on the site ):
+- Lightweight images using Alpine
+- Clear and descriptive Git workflow
+- Proper service orchestration with custom network
+- DockerHub image deployment with semantic versioning
+- Screenshot showing pushed images and version tags
+- Full documentation provided in `explanation.md`
+
+
