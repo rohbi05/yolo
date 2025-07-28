@@ -12,4 +12,4 @@ Install the docker engine here:
 ![Alt text](image.png)
 
 ## How to run the app..
-Use vagrant up --provison command
+Use vagrant up 
