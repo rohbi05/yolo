@@ -1,16 +1,20 @@
 ---
-- name: Pull image from repository
+- name: Ensure Docker network exists
+  docker_network:
+    name: app-net
+
+- name: Pull backend image from Docker Hub
   docker_image:
-    name: rohbikariuki/rohbikariuki/yolo-backend:v1.0.0
+    name: rohbikariuki/yolo-backend:v1.0.0
     source: pull
 
-- name: Create Node.js Backend Container
+- name: Run backend container
   docker_container:
     name: brian-yolo-backend
-    image: rohbikariuki/rohbikariuki/yolo-backend:v1.0.0
+    image: rohbikariuki/yolo-backend:v1.0.0
     networks:
       - name: app-net
     ports:
       - "5000:5000"
-    command: "npm start"
+    restart_policy: always
   become: yes
