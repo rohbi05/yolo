@@ -32,7 +32,7 @@ The Git history reflects a step-by-step progression of the project with descript
 - Final deployment and documentation
 
 
-This project satisfies all rubric requirements (except  getting the products to show on the site ):
+This project satisfies all rubric requirements (except  getting the products to show on the  webpage  ):
 - Lightweight images using Alpine
 - Clear and descriptive Git workflow
 - Proper service orchestration with custom network
