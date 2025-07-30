@@ -178,7 +178,8 @@ cd project
 vagrant up
 ```
 
-Everything else is handled.
+
+
 
 
 
