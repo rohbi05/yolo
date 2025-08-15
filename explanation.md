@@ -67,6 +67,7 @@ Sets up MongoDB:
 ### 3. `backend` Role
 Configures backend API:
 - Clones backend code from GitHub
+sha 
 - Builds backend Docker image and runs it with connection to `app-net`
 
 ### 4. `frontend` Role
